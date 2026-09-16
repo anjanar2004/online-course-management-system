@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Course</title>
+</head>
+<body>
+
+<h1>Edit Course</h1>
+
+<p>TEST: {{ course.title }}</p>
+
+<form method="post">
+    {% csrf_token %}
+
+    <p>Course Title:</p>
+    <input type="text" name="title" value="Python">
+
+    <p>Description:</p>
+    <textarea name="description">Learn Python, Django, HTML, CSS and JavaScript.</textarea>
+
+    <p>Instructor:</p>
+    <input type="text" name="instructor" value="Anjana">
+
+    <p>Price:</p>
+    <input type="number" name="price" value="6000">
+
+    <br><br>
+
+    <button type="submit">Update Course</button>
+</form>
+
+<br>
+
+<a href="{% url 'course_list' %}">Back to Courses</a>
+
+</body>
+</html>
