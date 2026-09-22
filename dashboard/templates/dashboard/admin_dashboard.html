@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6f8;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 50px auto;
+            padding: 30px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            color: #222;
+        }
+
+        .welcome {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .tagline {
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        .cards {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            flex: 1;
+            min-width: 200px;
+            padding: 25px;
+            background: #f8f9fa;
+            border-radius: 10px;
+        }
+
+        .card h3 {
+            margin-bottom: 10px;
+        }
+
+        .card a {
+            text-decoration: none;
+            color: #333;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>📚 Course Management System</h1>
+
+    <div class="welcome">
+        Welcome, {{ request.user.username }} 👋
+    </div>
+
+    <h2>Admin Dashboard</h2>
+
+    <p class="tagline">
+        “Manage Learning. Inspire Growth.”
+    </p>
+
+    <p>
+        Manage courses, users and enrollments from one place.
+    </p>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>📚 Manage Courses</h3>
+            <a href="/courses/">View Courses</a>
+        </div>
+
+        <div class="card">
+            <h3>👥 Manage Users</h3>
+            <a href="/accounts/users/">View Users</a>
+        </div>
+
+        <div class="card">
+            <h3>🎓 Enrollments</h3>
+            <a href="/courses/my-enrollments/">View Enrollments</a>
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

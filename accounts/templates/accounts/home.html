@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Course Management System</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+
+            background:
+                linear-gradient(
+                    rgba(10, 18, 30, 0.58),
+                    rgba(10, 18, 30, 0.70)
+                ),
+                url("https://images.unsplash.com/photo-1521587760476-6c12a4b040da?auto=format&fit=crop&w=2000&q=85")
+                center center / cover no-repeat fixed;
+
+            color: white;
+        }
+
+        /* NAVBAR */
+
+        .navbar {
+            height: 75px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 0 6%;
+
+            background: rgba(0, 0, 0, 0.35);
+            backdrop-filter: blur(8px);
+        }
+
+        .brand {
+            font-size: 21px;
+            font-weight: bold;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-buttons a {
+            text-decoration: none;
+            color: white;
+            margin-left: 15px;
+
+            padding: 10px 20px;
+            border-radius: 8px;
+
+            font-size: 14px;
+            font-weight: 600;
+
+            transition: 0.25s;
+        }
+
+        .nav-login {
+            border: 1px solid rgba(255,255,255,0.7);
+        }
+
+        .nav-signup {
+            background: #0d6efd;
+            box-shadow: 0 4px 0 #084298;
+        }
+
+        .nav-buttons a:hover {
+            transform: translateY(-2px);
+        }
+
+        /* HERO */
+
+        .hero {
+            min-height: calc(100vh - 75px);
+
+            display: flex;
+            align-items: center;
+
+            padding: 60px 8%;
+        }
+
+        .hero-content {
+            max-width: 720px;
+        }
+
+        .small-title {
+            font-size: 15px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+
+            color: #dbeafe;
+        }
+
+        h1 {
+            font-size: 58px;
+            line-height: 1.1;
+
+            margin: 0;
+
+            font-weight: 700;
+        }
+
+        h1 span {
+            color: #8ec5ff;
+        }
+
+        .tagline {
+            margin-top: 22px;
+
+            font-size: 25px;
+            font-weight: 600;
+        }
+
+        .description {
+            max-width: 600px;
+
+            margin-top: 18px;
+
+            font-size: 17px;
+            line-height: 1.7;
+
+            color: #e5e7eb;
+        }
+
+        /* BUTTONS */
+
+        .hero-buttons {
+            margin-top: 35px;
+
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .hero-btn {
+            display: inline-block;
+
+            padding: 14px 30px;
+
+            border-radius: 10px;
+
+            text-decoration: none;
+
+            font-size: 16px;
+            font-weight: 600;
+
+            transition: 0.25s;
+        }
+
+        .primary-btn {
+            background: #0d6efd;
+            color: white;
+
+            box-shadow:
+                0 5px 0 #084298,
+                0 10px 25px rgba(0,0,0,0.25);
+        }
+
+        .secondary-btn {
+            background: rgba(255,255,255,0.12);
+            color: white;
+
+            border: 1px solid rgba(255,255,255,0.6);
+
+            backdrop-filter: blur(5px);
+        }
+
+        .hero-btn:hover {
+            transform: translateY(-4px);
+        }
+
+        /* FEATURE BOXES */
+
+        .features {
+            margin-top: 50px;
+
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .feature {
+            padding: 13px 18px;
+
+            background: rgba(255,255,255,0.10);
+
+            border: 1px solid rgba(255,255,255,0.18);
+
+            border-radius: 10px;
+
+            backdrop-filter: blur(5px);
+
+            font-size: 14px;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 700px) {
+
+            .navbar {
+                padding: 0 20px;
+            }
+
+            .brand {
+                font-size: 17px;
+            }
+
+            .nav-buttons a {
+                padding: 8px 12px;
+                margin-left: 5px;
+            }
+
+            .hero {
+                padding: 50px 25px;
+            }
+
+            h1 {
+                font-size: 40px;
+            }
+
+            .tagline {
+                font-size: 21px;
+            }
+
+            .description {
+                font-size: 15px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <nav class="navbar">
+
+        <div class="brand">
+            📚 Course Management System
+        </div>
+
+        <div class="nav-buttons">
+
+            <a href="{% url 'login' %}" class="nav-login">
+                Login
+            </a>
+
+            <a href="{% url 'signup' %}" class="nav-signup">
+                Create Account
+            </a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- HERO SECTION -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <div class="small-title">
+                Learn • Grow • Succeed
+            </div>
+
+            <h1>
+                Unlock Your
+                <span>Learning Journey</span>
+            </h1>
+
+            <div class="tagline">
+                Learn Today, Lead Tomorrow.
+            </div>
+
+            <p class="description">
+                Discover courses, expand your knowledge and
+                take the next step towards your future.
+                Your learning journey begins here.
+            </p>
+
+
+            <!-- BUTTONS -->
+
+            <div class="hero-buttons">
+
+                <a href="{% url 'login' %}"
+                   class="hero-btn primary-btn">
+                    🔐 Login to Continue
+                </a>
+
+                <a href="{% url 'signup' %}"
+                   class="hero-btn secondary-btn">
+                    📝 Create Account
+                </a>
+
+            </div>
+
+
+            <!-- FEATURES -->
+
+            <div class="features">
+
+                <div class="feature">
+                    📖 Explore Courses
+                </div>
+
+                <div class="feature">
+                    🎓 Track Your Learning
+                </div>
+
+                <div class="feature">
+                    🚀 Build Your Future
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</body>
+</html>
